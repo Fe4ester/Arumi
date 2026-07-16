@@ -291,4 +291,42 @@ font-size:28px;
 margin-top:8px;
 font-size:12px;
 letter-spacing:2px;
+}.work-card{
+background-size:cover;
+background-position:center;
+position:relative;
+overflow:hidden;
+}
+
+.work-card::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.08));
+}
+
+.work-card h3,
+.work-card p{
+position:relative;
+z-index:1;
+}
+
+.work-card-books{
+background-image:url("images/books.png");
+}
+
+.featured-grid .work-card:nth-child(2){
+background-image:url("images/films.png");
+}
+
+.featured-grid .work-card:nth-child(3){
+background-image:url("images/journalism.png");
+}
+
+.featured-grid .work-card:nth-child(4){
+background-image:url("images/travel.png");
+}
+
+.featured-grid .work-card:nth-child(5){
+background-image:url("images/music.png");
 }
