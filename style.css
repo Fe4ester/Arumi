@@ -488,3 +488,37 @@ line-height:1.6;
 .contact-telegram:hover{
     text-decoration:underline;
 }
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        padding: 18px 20px;
+    }
+
+    nav {
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .about-section,
+    .contact-section,
+    .subscribe-section {
+        padding: 60px 20px;
+    }
+
+    .about-section h2,
+    .contact-section h2 {
+        font-size: 34px;
+    }
+
+    .about-text {
+        font-size: 18px;
+    }
+}
