@@ -750,3 +750,17 @@ overflow-wrap: anywhere;
         height: 88vh !important;
     }
 }
+@media (max-width: 768px) {
+    .navbar {
+        padding: 16px 10px !important;
+    }
+
+    .navbar .menu {
+        row-gap: 12px !important;
+    }
+
+    .navbar .menu a {
+        padding: 5px 0 !important;
+        line-height: 1.3 !important;
+    }
+}
