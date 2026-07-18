@@ -1,0 +1,20 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { site } from "@/content/site";
+---
+
+<BaseLayout title={`Terms of Use — ${site.meta.shortTitle}`} description="Terms of use for the Dina Makarova website.">
+  <article class="legal section">
+    <p class="eyebrow">Legal</p>
+    <h1>Terms of Use</h1>
+    <p class="legal__updated">Last updated: July 2026</p>
+    <h2>Website content</h2>
+    <p>Texts, photographs and other original materials on this website are protected by copyright unless stated otherwise.</p>
+    <h2>Permitted use</h2>
+    <p>You may view and share links to public pages. Republishing or commercial use of the materials requires prior written permission.</p>
+    <h2>Accuracy and availability</h2>
+    <p>The website is provided for informational purposes. Content may be corrected, updated or removed without notice.</p>
+    <h2>Contact</h2>
+    <p>For permissions or questions, email <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.</p>
+  </article>
+</BaseLayout>

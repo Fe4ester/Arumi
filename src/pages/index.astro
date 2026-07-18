@@ -1,0 +1,90 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Newsletter from "@/components/Newsletter.astro";
+import WorkCard from "@/components/WorkCard.astro";
+import { site, works } from "@/content/site";
+---
+
+<BaseLayout>
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <img
+      class="hero__image"
+      src={site.hero.image}
+      alt={site.hero.imageAlt}
+      width="1280"
+      height="718"
+      fetchpriority="high"
+    />
+    <div class="hero__veil"></div>
+    <div class="hero__content">
+      <p class="eyebrow hero__eyebrow">{site.hero.eyebrow}</p>
+      <h1 id="hero-title">
+        <span>{site.hero.firstName}</span>
+        <span>{site.hero.lastName}</span>
+      </h1>
+      <p class="hero__subtitle">{site.hero.subtitle}</p>
+      <a class="button button--primary" href="#works">{site.hero.cta} <span aria-hidden="true">↓</span></a>
+    </div>
+    <p class="hero__scroll" aria-hidden="true">Scroll to discover <span></span></p>
+  </section>
+
+  <section class="pillars" aria-label="Areas of work">
+    {site.pillars.map((pillar) => (
+      <article class="pillar" id={pillar.id} data-reveal>
+        <p class="pillar__number">{pillar.number}</p>
+        <h2>{pillar.title}</h2>
+        <p>{pillar.text.split("\n").map((line) => <>{line}<br /></>)}</p>
+        <a href={pillar.href}>Discover <span aria-hidden="true">↗</span></a>
+      </article>
+    ))}
+  </section>
+
+  <section class="works section" id="works" aria-labelledby="works-title">
+    <header class="section-heading" data-reveal>
+      <div>
+        <p class="eyebrow">Selected work</p>
+        <h2 id="works-title">Stories in many forms.</h2>
+      </div>
+      <p>Books, films, reporting, journeys and music — different languages for the same search for connection.</p>
+    </header>
+
+    <div class="works__grid">
+      {works.map((work, index) => <WorkCard work={work} featured={index === 0} />)}
+    </div>
+  </section>
+
+  <section class="about section" id="about" aria-labelledby="about-title">
+    <div class="about__intro" data-reveal>
+      <p class="eyebrow eyebrow--dark">{site.about.eyebrow}</p>
+      <h2 id="about-title">{site.about.title}</h2>
+    </div>
+    <div class="about__copy" data-reveal>
+      {site.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      <a class="text-link" href="#contact">Start a conversation <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="quote" aria-label="Quote">
+    <div class="quote__mark" aria-hidden="true">“</div>
+    <blockquote data-reveal>
+      <p>{site.quote.text}</p>
+      <cite>— {site.quote.author}</cite>
+    </blockquote>
+  </section>
+
+  <section class="contact section" id="contact" aria-labelledby="contact-title">
+    <div data-reveal>
+      <p class="eyebrow">{site.contact.eyebrow}</p>
+      <h2 id="contact-title">{site.contact.title}</h2>
+    </div>
+    <div class="contact__details" data-reveal>
+      <p>{site.contact.text}</p>
+      <a class="contact__email" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+      <a class="text-link text-link--light" href={site.contact.telegramUrl} target="_blank" rel="noreferrer">
+        Telegram {site.contact.telegramLabel} <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <Newsletter />
+</BaseLayout>

@@ -1,0 +1,49 @@
+---
+import { site } from "@/content/site";
+---
+
+<header class="site-header" data-header>
+  <a class="brand" href="/" aria-label="Dina Makarova — home">
+    <span>DM</span>
+    <span class="brand__name">Dina Makarova</span>
+  </a>
+
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+    <span class="sr-only">Open navigation</span>
+    <span class="menu-toggle__line"></span>
+    <span class="menu-toggle__line"></span>
+  </button>
+
+  <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
+    <ul>
+      {site.navigation.map((item) => (
+        <li><a href={item.href}>{item.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  /** Управление меню изолировано внутри шапки и не требует сторонних библиотек. */
+  const header = document.querySelector<HTMLElement>("[data-header]");
+  const toggle = header?.querySelector<HTMLButtonElement>(".menu-toggle");
+  const navigation = header?.querySelector<HTMLElement>(".site-nav");
+
+  const closeMenu = () => {
+    header?.classList.remove("menu-is-open");
+    toggle?.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("has-open-menu");
+  };
+
+  toggle?.addEventListener("click", () => {
+    const opening = !header?.classList.contains("menu-is-open");
+    header?.classList.toggle("menu-is-open", opening);
+    toggle.setAttribute("aria-expanded", String(opening));
+    document.body.classList.toggle("has-open-menu", opening);
+  });
+
+  navigation?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+</script>
