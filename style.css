@@ -637,7 +637,7 @@ line-height:1.6;
 @media (max-width: 768px) {
     .hero-photo {
         object-fit: contain;
-        object-position: center top;
+        object-position: center 18%;git add .
         background: #000;
     }
 }
