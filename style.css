@@ -745,3 +745,8 @@ overflow-wrap: anywhere;
         letter-spacing: 1px !important;
     }
 }
+@media (max-width: 768px) {
+    .hero {
+        height: 88vh !important;
+    }
+}
