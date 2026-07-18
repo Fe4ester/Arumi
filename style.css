@@ -720,7 +720,8 @@ overflow-wrap: anywhere;
     .work-card h3 {
         font-size: 18px !important;
         line-height: 1.05;
-        overflow-wrap: anywhere;
+        overflow-wrap: normal;
+        word-break: keep-all;
     }
 
     .work-card p {
