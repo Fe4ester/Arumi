@@ -729,26 +729,13 @@ overflow-wrap: anywhere;
         padding: 16px;
     }
 }
-
 @media (max-width: 768px) {
-    .work-card h3 {
-        font-size: 18px !important;
-        line-height: 1.05;
-        overflow-wrap: normal;
-        word-break: keep-all;
+    .work-card-films,
+    .work-card-journalism {
+        grid-column: span 2 !important;
+        aspect-ratio: 2 / 1 !important;
     }
 
-    .work-card p {
-        font-size: 11px;
-        letter-spacing: 2px;
-    }
-
-    .work-card {
-        padding: 14px !important;
-        overflow: hidden;
-    }
-}
-@media (max-width: 768px) {
     .work-card-journalism h3 {
         font-size: 16px !important;
     }
