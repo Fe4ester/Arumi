@@ -289,7 +289,7 @@ grid-row:span 2;
 }
 .work-card-journalism {
     grid-column: span 2;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 2.15 / 1;
 }
 
 .work-card h3{
