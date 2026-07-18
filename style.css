@@ -682,7 +682,7 @@ line-height:1.6;
 
 @media (max-width: 768px) {
     .pillars {
-        display: grid !important;
+        display: block !important;
         grid-template-columns: 1fr !important;
         width: 100% !important;
     }
