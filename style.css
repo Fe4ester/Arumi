@@ -706,7 +706,9 @@ line-height:1.6;
     }
 
     .work-card h3 {
-        font-size: 22px;
+        font-size: 18px;
+        line-height: 1.05;
+overflow-wrap: anywhere;
     }
 
     .work-card {
